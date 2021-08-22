@@ -8,89 +8,12 @@
 </head>
 <body>
 
-<!--<article class="comment" th:fragment="comment-fragment">-->
-<!--    <div class="title">-->
-<!--        <a th:href="@{ ${comment.commentUrl} }" target="_blank">[[${comment.title}]]</a>-->
+<article class="comment" th:fragment="comment-fragment">
+    <div>
+        <p>[[${comment.commentText}]]</p>
 
-<!--        <div th:if="${#strings.contains(comment.commentUrl, 'http://')}">-->
-<!--            <div th:with="arg=${#strings.replace(comment.commentUrl,'http://','')}">-->
-<!--                <div th:if="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:with="arg2=${#strings.arraySplit(arg, '/')}">-->
-<!--                        <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div th:unless="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:if="${#strings.contains(arg, '?')}">-->
-<!--                        <div th:with="arg2=${#strings.arraySplit(arg, '?')}">-->
-<!--                            <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div th:unless="${#strings.contains(arg, '?')}">-->
-<!--                        <span th:text="${#strings.toString(arg)}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div th:if="${#strings.contains(comment.commentUrl, 'https://')}">-->
-<!--            <div th:with="arg=${#strings.replace(comment.commentUrl,'https://','')}">-->
-<!--                <div th:if="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:with="arg2=${#strings.arraySplit(arg, '/')}">-->
-<!--                        <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div th:unless="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:if="${#strings.contains(arg, '?')}">-->
-<!--                        <div th:with="arg2=${#strings.arraySplit(arg, '?')}">-->
-<!--                            <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div th:unless="${#strings.contains(arg, '?')}">-->
-<!--                        <span th:text="${#strings.toString(arg)}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div th:if="${#strings.contains(comment.commentUrl, 'www.')}">-->
-<!--            <div th:with="arg=${#strings.replace(comment.commentUrl,'www.','')}">-->
-<!--                <div th:if="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:with="arg2=${#strings.arraySplit(arg, '/')}">-->
-<!--                        <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div th:unless="${#strings.contains(arg, '/')}">-->
-<!--                    <div th:if="${#strings.contains(arg, '?')}">-->
-<!--                        <div th:with="arg2=${#strings.arraySplit(arg, '?')}">-->
-<!--                            <span th:text="${#strings.toString(arg2[0])}"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div th:unless="${#strings.contains(arg, '?')}">-->
-<!--                        <span th:text="${#strings.toString(arg)}"></span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <div th:if="${comment.voteCount == 1}" class="meta">
-            [[${comment.voteCount}]] point by [[${comment.userName}]] on
-            <span th:text="${#dates.format(comment.postedAt, 'MM-dd-YY')}"></span>
-
-            <a th:href="@{/comment/{id}(id=${comment.id})}" th:if="${comment.posts.size() == 1}">[[${comment.posts.size()}]]
-                post</a>
-            <a th:href="@{/comment/{id}(id=${comment.id})}" th:unless="${comment.posts.size() == 1}">[[${comment.posts.size()}]]
-                posts</a>
-        </div>
-        <div th:unless="${comment.voteCount == 1}" class="meta">
-            [[${comment.voteCount}]] points by [[${comment.userName}]] on
-            <span th:text="${#dates.format(comment.postedAt, 'MM-dd-YY')}"></span>
-            |
-            <a th:href="@{/comment/{id}(id=${comment.id})}" th:if="${comment.comments.size() == 1}">[[${comment.posts.size()}]]
-                post</a>
-            <a th:href="@{/comment/{id}(id=${comment.id})}" th:unless="${comment.posts.size() == 1}">[[${comment.posts.size()}]]
-                posts</a>
-        </div>
     </div>
+
 </article>
 
 </body>
