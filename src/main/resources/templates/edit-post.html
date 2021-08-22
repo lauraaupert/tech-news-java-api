@@ -55,7 +55,11 @@
     </form>
 
     <div class="comments">
-        <div th:insert="fragments/comment-fragment :: comment-fragment"></div>
+        <ol>
+            <li th:each="comment : ${commentList}">
+                <div th:insert="fragments/comment-fragment :: comment-fragment"></div>
+            </li>
+        </ol>
     </div>
 
     <div th:if="${loggedIn}">

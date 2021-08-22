@@ -30,7 +30,14 @@
   </form>
 
   <div class="comments">
-    <div th:insert="fragments/comment-fragment :: comment-fragment"></div>
+    <ol>
+      <li th:each="comment : ${commentList}">
+        <div th:insert="fragments/comment-fragment :: comment-fragment"></div>
+<!--        <a th:href="@{/dashboard/edit/{id}(id=${post.id})}" class="edit-link">Edit post</a>-->
+      </li>
+    </ol>
+
+<!--    <div th:insert="fragments/comment-fragment :: comment-fragment"></div>-->
   </div>
   <div th:if="${loggedIn}">
     <script src="/js/upvote.js"></script>
